@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from "firebase/app";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
+  constructor(private backend: AngularFireAuth){
+
+  }
 
   clickMe(){
-    console.log("message pour les développeurs !")
-    alert("Message pour utilisateur")
+    this.backend.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    
   }
 }
