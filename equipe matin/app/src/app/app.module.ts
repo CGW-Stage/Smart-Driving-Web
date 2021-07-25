@@ -25,6 +25,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 
 
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 const firebaseConfig = {
@@ -40,7 +41,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

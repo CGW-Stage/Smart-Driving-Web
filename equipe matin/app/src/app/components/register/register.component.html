@@ -1,0 +1,38 @@
+<nz-drawer [nzClosable]="false" nzHeight="320px" [nzVisible]="visible" nzPlacement="top" nzTitle="Merci d'utiliser SMART DRIVING">
+    <ng-container *nzDrawerContent>
+
+      <p>
+        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Ville de résidence" [(ngModel)]="user.ville">
+          <nz-option nzLabel="Douala" nzValue="Douala"></nz-option>
+          <nz-option nzLabel="Yaounde" nzValue="Yaounde"></nz-option>
+          <nz-option nzLabel="Bafousam" nzValue="Bafousam"></nz-option>
+          <nz-option nzLabel="Kribi" nzValue="Kribi"></nz-option>
+        </nz-select>
+      </p>
+
+      <p>
+        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Votre vehicule" [(ngModel)]="user.marque">
+          <nz-option nzLabel="Toyota" nzValue="Toyota"></nz-option>
+          <nz-option nzLabel="Mercedes" nzValue="Mercedes"></nz-option>
+          <nz-option nzLabel="Nissan" nzValue="Nissan"></nz-option>
+          <nz-option nzLabel="" nzValue="Nissan"></nz-option>
+        </nz-select>
+      </p>
+
+      <p>
+        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Votre assurance" [(ngModel)]="user.assurance">
+          <nz-option nzLabel="Activa" nzValue="Activa"></nz-option>
+          <nz-option nzLabel="AGC" nzValue="AGC"></nz-option>
+          <nz-option nzLabel="ASCOMA" nzValue="ASCOMA"></nz-option>
+          <nz-option nzLabel="AXA" nzValue="AXA"></nz-option>
+          <nz-option nzLabel="Chanas" nzValue="Chanas"></nz-option>
+        </nz-select>
+      </p>
+
+      <br>
+      <div style="text-align: center;">
+        <button (click)="createUser()" nz-button nzType="primary" nzShape="round" nzSize="large">Valider</button>
+      </div>
+      
+    </ng-container>
+  </nz-drawer>

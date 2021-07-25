@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 
-interface userType { name: string, id: string, email: string, ville: string, model: string, marque: string, assurance: string }
+interface userType { name: string, id: string, email: string, ville: string, model: string, marque: string, assurance: string, role: 'client' | 'worker' | 'admin' }
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,7 @@ interface userType { name: string, id: string, email: string, ville: string, mod
 export class AppComponent {
   currentUser: userType
   title = 'SMART DRIVING'
-  view: 'menu' = 'menu'
-  visible = false
+  view: 'menu' | 'new user' = 'menu'
 
   constructor(private backend: AngularFireAuth, private database: AngularFireDatabase) {
 
@@ -47,16 +46,12 @@ export class AppComponent {
 
   // 
   registerUser() {
-    this.visible = true
+    this.view = 'new user'
   }
 
   initNewUser() {
     this.currentUser = {} as userType
   }
 
-  createUser() {
-    console.log(this.currentUser)
-    this.database.object('users/' + this.currentUser.id).set(this.currentUser)
-    this.visible = false
-  }
+  
 }
