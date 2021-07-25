@@ -20,6 +20,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
+import { LoginComponent } from './components/login/login.component';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyC7L25Kf_snZM9f_7QvCMdVjHYE372NKYE",
@@ -33,7 +35,8 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ const firebaseConfig = {
     NzButtonModule,
     NzIconModule,
     NzGridModule,
+    
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent]

@@ -1,32 +1,20 @@
-h1 {
-    text-align: center;
-    color: cadetblue;
-}
-
-p {
-    font-size: 24px;
-    line-height: 32px;
-}
-
-.block-btn {
-    padding: 24px;
-    text-align: center;
-}
-
 .content {
-    padding: 12px;
     height: 100%;
+    width: 100%;
+}
+
+.login {
     background: #6495ed;
+    height: 100%;
+    width: 100%;
     text-align: center;
 }
 
 .title {
-    h1 {
-        color: gold;
-    }
-
-    h2 {
-        padding-bottom: 80px;
-        color: white;
-    }
+    padding-left: 5px;
+    height: 60px;
+    background: #6495ed;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
 }

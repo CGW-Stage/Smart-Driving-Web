@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import firebase from "firebase/app";
+
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,7 @@ import firebase from "firebase/app";
 })
 export class AppComponent {
   currentUser = {} as { name: string, id: string, email: string }
+  title = 'SMART DRIVING'
 
   constructor(private backend: AngularFireAuth) {
 
@@ -16,38 +17,27 @@ export class AppComponent {
 
   ngOnInit() {
     this.backend.authState.subscribe(res => {
-      this.currentUser.name = res.displayName
-      this.currentUser.email = res.email
-      this.currentUser.id = res.uid
+      if(res){
+        this.currentUser.name = res.displayName
+        this.currentUser.email = res.email
+        this.currentUser.id = res.uid
+      }
+      else{
+        this.currentUser = null
+      }
 
-      console.log('user connected');
-      console.log(this.currentUser);
+      
 
     })
   }
 
-  // login with google
-  google_login() {
-    this.backend.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then(res => {
-        console.log(res);
-        this.currentUser.name = res.user.displayName
-        this.currentUser.id = res.user.email
-      })
-      .catch(error => {
-        console.log(error);
-      })
+  onBack(){
+    console.log('return');
+    
   }
 
-  // login with facebook
-  fb_login() {
-    this.backend.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then(res => {
-        console.log(res);
-      })
-      .catch(error => {
-        console.log(error);
-      })
-
+  logout(){
+    this.backend.signOut()
+    
   }
 }
