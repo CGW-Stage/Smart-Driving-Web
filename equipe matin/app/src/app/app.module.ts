@@ -19,6 +19,10 @@ registerLocaleData(fr);
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+
 
 import { LoginComponent } from './components/login/login.component';
 
@@ -51,6 +55,9 @@ const firebaseConfig = {
     NzButtonModule,
     NzIconModule,
     NzGridModule,
+    NzDrawerModule,
+    NzInputModule,
+    NzSelectModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],

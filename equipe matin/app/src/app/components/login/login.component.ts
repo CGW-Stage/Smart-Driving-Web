@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from "firebase/app";
 
@@ -8,6 +8,8 @@ import firebase from "firebase/app";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @Output() register = new EventEmitter()
+
   constructor(private backend: AngularFireAuth) { }
 
   ngOnInit(): void {
@@ -17,25 +19,33 @@ export class LoginComponent implements OnInit {
   google_login() {
     this.backend.signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(res => {
-        console.log(res);
-        // this.currentUser.name = res.user.displayName
-        // this.currentUser.id = res.user.email
+        if (res.additionalUserInfo.isNewUser) {
+          this.register.emit()
+        }
+        console.log('connection reussie');
 
       })
       .catch(error => {
         console.log(error);
+        console.log('connection echouée');
       })
   }
 
   // login with facebook
   fb_login() {
-    this.backend.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    this.backend.signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(res => {
-        console.log(res);
+        if (res.additionalUserInfo.isNewUser) {
+          this.register.emit()
+        }
+        console.log('connection reussie');
       })
       .catch(error => {
         console.log(error);
+        console.log('connection echouée');
       })
 
   }
+
+
 }
