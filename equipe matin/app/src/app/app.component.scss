@@ -1,6 +1,8 @@
 .content {
     height: 100%;
     width: 100%;
+    padding: 16px;
+    text-align: center;
 }
 
 .login {
@@ -23,7 +25,7 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
-    background: rgba(220, 220, 220, 0.596);
+    background: #dcdcdc98;
 }
 
 menu {

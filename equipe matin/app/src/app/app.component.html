@@ -7,32 +7,48 @@
     </div>
   </div>
 
-  <div *ngIf="view==5">
-    <register [user]="currentUser" [visible]="view==5 ? true : false"></register>
+  <div class="content">
+    <div *ngIf="view==5">
+      <register [user]="currentUser" [visible]="view==5 ? true : false"></register>
+    </div>
+
+    <div *ngIf="view==0">
+      <p>0</p>
+    </div>
+
+    <div *ngIf="view==1">
+      1
+    </div>
+
+    <div *ngIf="view==2" style="padding-top: 25px;">
+      <nz-avatar [nzSize]="84" nzIcon="user"></nz-avatar>
+
+      <h1>{{currentUser.name}} </h1>
+      <p>Paiement OK</p>
+
+      <hr>
+
+      <br>
+      <div style="text-align: left;">
+        <p><b>Véhicule: </b> {{currentUser?.marque}} </p>
+        <p><b>Ville: </b> {{currentUser?.ville}} </p>
+        <p><b>Assurance: </b> {{currentUser?.assurance}} </p>
+        <p><b>Role: </b> {{currentUser?.role}} </p>
+        <p><b>Email: </b> {{currentUser?.email}} </p>
+      </div>
+    </div>
+
+    <div *ngIf="view==3">
+      3
+    </div>
+
+    <div *ngIf="view==4">
+      4
+    </div>
   </div>
-
-  <div class="content" *ngIf="view==0">
-   <p>0</p>
-  </div>
-
-  <div class="content" *ngIf="view==1">
-    1
-   </div>
-
-   <div class="content" *ngIf="view==2">
-    2
-   </div>
-
-   <div class="content" *ngIf="view==3">
-    3
-   </div>
-
-   <div class="content" *ngIf="view==4">
-    4
-   </div>
 
   <div class="foot">
-    <menu (menuSelected)="changeMenu($event)"></menu>
+    <menu selection="2" (menuSelected)="changeMenu($event)"></menu>
   </div>
 
 </div>

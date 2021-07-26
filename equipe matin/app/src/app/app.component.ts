@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 
-interface userType { name: string, id: string, email: string, ville: string, model: string, marque: string, assurance: string, role: 'client' | 'worker' | 'admin' }
-enum viewType {appointement, payment, profile, assurance, shop, register}
+interface userType { name: string, id: string, email: string, ville: string, model: string, marque: string, assurance: string, role: 'client' | 'worker' | 'admin', payment: any }
+enum viewType { appointement, payment, profile, assurance, shop, register }
 
 @Component({
   selector: 'app-root',
@@ -23,12 +23,12 @@ export class AppComponent {
     this.initNewUser()
 
     this.backend.authState.subscribe(res => {
-      console.log(res);
 
       if (res) {
-        this.currentUser.name = res.displayName
-        this.currentUser.email = res.email
-        this.currentUser.id = res.uid
+        this.database.object(`users/${res.uid}`).valueChanges()
+          .subscribe((user: userType) => {
+            this.currentUser = user
+          })
       }
       else {
         this.initNewUser()
