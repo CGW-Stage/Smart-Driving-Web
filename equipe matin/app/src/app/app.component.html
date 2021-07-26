@@ -1,4 +1,4 @@
-<div class="content" *ngIf="currentUser.id">
+<div *ngIf="currentUser.id">
   <div class="title" nz-row nzAlign="middle">
     <div nz-col nzSpan="22"> {{title}}</div>
 
@@ -11,6 +11,22 @@
     <register [user]="currentUser" [visible]="view=='new user' ? true : false"></register>
   </div>
 
+  <div class="content" *ngIf="view=='menu'">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo
+      quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas
+      doloremque dolore? </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo
+      quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas
+      doloremque dolore? </p>
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas doloremque dolore? </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas doloremque dolore? </p> -->
+
+
+  </div>
+
+  <div class="foot">
+    <menu></menu>
+  </div>
 
 </div>
 

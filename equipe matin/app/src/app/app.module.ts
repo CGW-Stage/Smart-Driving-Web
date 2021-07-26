@@ -22,10 +22,12 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 const firebaseConfig = {
@@ -42,7 +44,8 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ const firebaseConfig = {
     NzGridModule,
     NzDrawerModule,
     NzInputModule,
-    NzSelectModule
+    NzSelectModule,
+    NzTabsModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],
