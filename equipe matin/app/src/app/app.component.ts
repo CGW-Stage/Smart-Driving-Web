@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 
 interface userType { name: string, id: string, email: string, ville: string, model: string, marque: string, assurance: string, role: 'client' | 'worker' | 'admin' }
+enum viewType {appointement, payment, profile, assurance, shop, register}
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ interface userType { name: string, id: string, email: string, ville: string, mod
 export class AppComponent {
   currentUser: userType
   title = 'SMART DRIVING'
-  view: 'menu' | 'new user' = 'menu'
+  view = viewType.profile
 
   constructor(private backend: AngularFireAuth, private database: AngularFireDatabase) {
 
@@ -46,12 +47,14 @@ export class AppComponent {
 
   // 
   registerUser() {
-    this.view = 'new user'
+    this.view = viewType.register
   }
 
   initNewUser() {
     this.currentUser = {} as userType
   }
 
-  
+  changeMenu(index) {
+    this.view = index
+  }
 }

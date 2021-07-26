@@ -7,25 +7,32 @@
     </div>
   </div>
 
-  <div *ngIf="view=='new user'">
-    <register [user]="currentUser" [visible]="view=='new user' ? true : false"></register>
+  <div *ngIf="view==5">
+    <register [user]="currentUser" [visible]="view==5 ? true : false"></register>
   </div>
 
-  <div class="content" *ngIf="view=='menu'">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo
-      quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas
-      doloremque dolore? </p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo
-      quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas
-      doloremque dolore? </p>
-    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas doloremque dolore? </p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ducimus suscipit reiciendis sapiente maiores illo quam pariatur, ea dignissimos alias eius distinctio, reprehenderit magnam, optio amet architecto voluptas doloremque dolore? </p> -->
-
-
+  <div class="content" *ngIf="view==0">
+   <p>0</p>
   </div>
+
+  <div class="content" *ngIf="view==1">
+    1
+   </div>
+
+   <div class="content" *ngIf="view==2">
+    2
+   </div>
+
+   <div class="content" *ngIf="view==3">
+    3
+   </div>
+
+   <div class="content" *ngIf="view==4">
+    4
+   </div>
 
   <div class="foot">
-    <menu></menu>
+    <menu (menuSelected)="changeMenu($event)"></menu>
   </div>
 
 </div>

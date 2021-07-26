@@ -1,5 +1,5 @@
 <div class="menu">
-    <nz-tabset nzTabPosition="bottom" (nzSelectChange)="menuSelected($event.index)">
+    <nz-tabset nzTabPosition="bottom" (nzSelectChange)="changed($event.index)">
         <nz-tab [nzTitle]="Tab1">
             <ng-template #Tab1>
                 <i nz-icon nzType="calendar" nzTheme="outline"></i>

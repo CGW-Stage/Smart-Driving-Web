@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'menu',
@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+@Output() menuSelected = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  menuSelected(index)  {
-    console.log(index);
-    
+  changed(index)  {
+    this.menuSelected.emit(index)
   }
 }
