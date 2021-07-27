@@ -1,0 +1,33 @@
+<div class="menu">
+    <nz-tabset nzTabPosition="bottom" (nzSelectedIndexChange)="menuChanged($event)" >
+        <nz-tab [nzTitle]="titleTemplate">
+          <ng-template #titleTemplate>
+            <i nz-icon nzType="calendar" nzTheme="outline"></i>
+          </ng-template>
+        </nz-tab>
+
+        <nz-tab [nzTitle]="titleTemplate1">
+            <ng-template #titleTemplate1>
+              <i nz-icon nzType="dollar" nzTheme="outline"></i>
+            </ng-template>
+          </nz-tab>
+
+          <nz-tab [nzTitle]="titleTemplate2">
+            <ng-template #titleTemplate2>
+              <i nz-icon nzType="user" nzTheme="outline"></i>
+            </ng-template>
+          </nz-tab>
+
+          <nz-tab [nzTitle]="titleTemplate3">
+            <ng-template #titleTemplate3>
+              <i nz-icon nzType="file-protect" nzTheme="outline"></i>
+            </ng-template>
+          </nz-tab>
+
+          <nz-tab [nzTitle]="titleTemplate4">
+            <ng-template #titleTemplate4>
+              <i nz-icon nzType="car" nzTheme="outline"></i>
+            </ng-template> 
+          </nz-tab>
+      </nz-tabset>
+</div>
