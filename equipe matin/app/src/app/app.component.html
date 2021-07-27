@@ -13,7 +13,22 @@
     </div>
 
     <div *ngIf="view==0">
-      <p>0</p>
+      <button nz-button nzDanger nzType="primary" nzSize="large" (click)="showCalendar=!showCalendar">
+        {{showCalendar ? 'Annuler' : 'Nouveau Rendez-vous'}}
+      </button>
+
+      <div *ngIf="showCalendar"
+        [ngStyle]="{ width: '300px', border: '1px solid #d9d9d9', borderRadius: '4px', marginTop: '15px' }">
+        <nz-calendar *ngIf="showCalendar" [nzDisabledDate]="disableDates" [nzFullscreen]="false"
+          (nzSelectChange)="onValueChange($event)"></nz-calendar>
+      </div>
+
+      <br><br>
+      <div style="text-align: left; " *ngFor="let rdv of currentUser?.garage">
+        <p>
+          {{rdv.date | date}} | {{rdv.type}} | {{rdv.cost}}
+        </p>
+      </div>
     </div>
 
     <div *ngIf="view==1">

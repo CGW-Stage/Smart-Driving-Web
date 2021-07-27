@@ -24,6 +24,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzCalendarModule } from 'ng-zorro-antd/calendar';
 
 
 import { LoginComponent } from './components/login/login.component';
@@ -65,7 +66,8 @@ const firebaseConfig = {
     NzInputModule,
     NzSelectModule,
     NzTabsModule,
-    NzAvatarModule
+    NzAvatarModule,
+    NzCalendarModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],
