@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "smart-driving-cgw": {
+      "hosting": {
+        "app": [
+          "smart-driving-cgw"
+        ]
+      }
+    }
+  }
+}

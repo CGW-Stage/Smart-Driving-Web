@@ -1,6 +1,31 @@
-<!-- NG-ZORRO -->
-<a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
-  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
+<div *ngIf="menu=='login'" class="login" nz-row nzJustify="center" nzAlign="middle">
+  <div nz-col>
+    <div>
+      <app-login></app-login>
 
-{{title}}
-</a>
+      <div style="position: fixed; bottom: 5px;">
+        <p>2021 &copy; CGW Academy</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="menu=='register'">
+  register
+</div>
+
+<div *ngIf="menu=='menu'" class="content">
+  <div class="title" nz-row nzAlign="middle">
+    <div nz-col nzSpan="22">SMART DRIVING </div>
+
+    <div nz-col>
+      <i nz-icon nzType="poweroff" nzTheme="outline" (click)="logout()"></i>
+    </div>
+  </div>
+
+  <div class="dyna-compo"></div>
+
+  <div class="menu" >
+    <app-menu></app-menu>
+  </div>
+</div>
